@@ -1,3 +1,12 @@
 <%- include('./layout/head.ejs') %>
-  <h1><%= pageConf.head.title %></h1>
-  <%- include('./layout/foot.ejs') %>
+
+<div id="app">
+  <%- include('/templates/common/header.ejs', { fieldData, phoneData }) %>
+</div>
+
+<!-- 存放数据, 像天猫商城的例子一样, 后端把数据注入到前端 => 通过id直接可以拿到 -->
+<%- include('datas/field_data.ejs', { fieldData }) %>
+<%- include('datas/phone_data.ejs', { phoneData }) %>
+<%- include('datas/swiper_data.ejs', { swiperData }) %>
+
+<%- include('./layout/foot.ejs') %>
